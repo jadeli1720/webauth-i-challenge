@@ -4,9 +4,6 @@ const Users = require('./user-module');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send("It's working! It's Working!!")
-});
 
 //Testing bcrypt by hashing name
 
@@ -21,7 +18,9 @@ router.get('/hash', (req, res) => {
 //User Registers- post to body and Hash the password
 router.post('/register', (req, res) => {
     let { username, password } = req.body;
+
     const hash = bcrypt.hashSync(password, 12);
+
     Users.add({ username, password: hash })
         .then(saved => {
             res.status(201).json(saved)
@@ -32,9 +31,32 @@ router.post('/register', (req, res) => {
         });
 });
 
-
-//User Logs In
+//User LogIn
+router.post('/login', (req, res) => {
+    let { username, password } = req.body;
+  
+    Users.findBy({ username })
+      .first()
+      .then(user => {
+        if (user && bcrypt.compareSync(password, user.password)) {
+          res.status(200).json({ message: `Welcome ${user.username}!` });
+        } else {
+          res.status(401).json({ message: 'You Shall Not Pass!!!' });
+        }
+      })
+      .catch(error => {
+        res.status(500).json(error);
+      });
+  });
 
 // User Validation
+router.get('/', (req, res) => {
+    Users.find()
+      .then(users => {
+        res.json(users);
+      })
+      .catch(err => res.send(err));
+  });
+  
 
 module.exports = router

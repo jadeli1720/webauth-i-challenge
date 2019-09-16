@@ -13,10 +13,10 @@ function find() {
         .select('id', 'username', 'password')
 };
 
-//Find user by argument ---> Used for login validation
+//Find user by argument ---> Used for login 
 function findBy(filter) {
-    return db('users').where(filter)
-};
+    return db('users').where(filter);
+  }
 
 //Add User ---> User Registration
 function add(user) {
