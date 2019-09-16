@@ -8,7 +8,7 @@ module.exports = {
 };
 
 //find and display user info ---> only if user is verified
-function find () {
+function find() {
     return db('users')
         .select('id', 'username', 'password')
 };
@@ -21,15 +21,16 @@ function findBy(filter) {
 //Add User ---> User Registration
 function add(user) {
     return db('users')
-            .insert(ids => {
-                const [id] = ids;
-                return findById(id)
-            })
+        .insert(user, 'id')
+        .then(ids => {
+            const [id] = ids;
+            return findById(id)
+        })
 };
 
 //Used to add user and give them id
 function findById(id) {
     return db('users')
-            .where({ id })
-            .first();
+        .where({ id })
+        .first();
 }
