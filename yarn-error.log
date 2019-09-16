@@ -1,0 +1,58 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-router-dom
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jade\bin;C:\Users\Jade\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Jade\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\PuTTY;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Users\Jade\AppData\Local\Microsoft\WindowsApps;C:\Users\Jade\AppData\Local\GitHubDesktop\bin;C:\Users\Jade\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Jade\AppData\Roaming\npm;C:\Users\Jade\AppData\Local\Microsoft\WindowsApps;C:\Users\Jade\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Jade\Desktop\Node.js\Week_Three\projects\webauth-i-challenge\node_modules\sqlite3\lib\binding\node-v64-win32-x64\node_sqlite3.node'
+
+npm manifest: 
+  {
+    "name": "webauth-i-challenge",
+    "version": "1.0.0",
+    "description": "- Authentication.\r - Express Middleware.\r - Password Hashing.\r - Sessions\r - Cookies",
+    "main": "index.js",
+    "scripts": {
+      "server": "nodemon index.js",
+      "start": "node index.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jadeli1720/webauth-i-challenge.git"
+    },
+    "keywords": [],
+    "author": "",
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
+      "dotenv": "^8.1.0",
+      "express": "^4.17.1",
+      "helmet": "^3.21.0",
+      "knex": "^0.19.4",
+      "sqlite3": "^4.1.0"
+    },
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/jadeli1720/webauth-i-challenge/issues"
+    },
+    "devDependencies": {
+      "nodemon": "^1.19.2"
+    },
+    "homepage": "https://github.com/jadeli1720/webauth-i-challenge#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
