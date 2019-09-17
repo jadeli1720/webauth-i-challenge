@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Home from './components/Home'
+import Home from './components/Home';
+import Login from './components/Login';
+import Users from './components/Users'
 
 import './App.css';
 
@@ -15,13 +17,15 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/">Login</Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/">User List</Link>
+              <Link to="/users">User List</Link>
             </li>
           </ul>
           <Route exact path='/' component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/users" component={Users} />
         </div>
       </div>
     </Router>
